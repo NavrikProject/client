@@ -1,22 +1,5 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
-import {
-  LineStyle,
-  Timeline,
-  TrendingUp,
-  PermIdentity,
-  Storefront,
-  AttachMoney,
-  BarChart,
-  MailOutline,
-  DynamicFeed,
-  ChatBubbleOutline,
-  WorkOutline,
-  Report,
-  NotificationsNone,
-  Language,
-  Settings,
-} from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import UsersTable from "./AllTrainersTable";
 import AllCourse from "./AllCourse";
@@ -49,15 +32,15 @@ const Dashboard = () => {
           </div>
           <div className="topRight">
             <div className="topbarIconContainer">
-              <NotificationsNone />
+              <i className="fa-solid fa-bell"></i>
               <span className="topIconBadge">2</span>
             </div>
             <div className="topbarIconContainer">
-              <Language />
+              <i className="fa-solid fa-language"></i>
               <span className="topIconBadge">2</span>
             </div>
             <div className="topbarIconContainer">
-              <Settings />
+              <i className="fa-solid fa-gear"></i>
             </div>
             <img
               src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -78,81 +61,48 @@ const Dashboard = () => {
                   to="/"
                   className="link"
                 >
-                  <li className="sidebarListItem active">
-                    <LineStyle className="sidebarIcon" />
-                    Home
-                  </li>
+                  <li className="sidebarListItem active">Home</li>
                 </Link>
                 <Link
                   style={{ textDecoration: "none" }}
                   to="/user/admin/dashboard/add-new-course"
                   className="link"
                 >
-                  <li className="sidebarListItem">
-                    <Timeline className="sidebarIcon" />
-                    Add New Course
-                  </li>
+                  <li className="sidebarListItem">Add New Course</li>
                 </Link>
-                <li className="sidebarListItem">
-                  <TrendingUp className="sidebarIcon" />
-                  Timeline
-                </li>
+                <li className="sidebarListItem">Timeline</li>
               </ul>
             </div>
             <div className="sidebarMenu">
               <h3 className="sidebarTitle">Quick Menu</h3>
               <ul className="sidebarList">
                 <li className="sidebarListItem" onClick={ShowTrainersHandler}>
-                  <PermIdentity className="sidebarIcon" />
                   All Trainers
                 </li>
                 <li className="sidebarListItem" onClick={ShowCourseHandler}>
-                  <Storefront className="sidebarIcon" />
                   All Courses
                 </li>
 
                 <li className="sidebarListItem" onClick={ShowAllUsersHandler}>
-                  <AttachMoney className="sidebarIcon" />
                   All users
                 </li>
-                <li className="sidebarListItem">
-                  <BarChart className="sidebarIcon" />
-                  Reports
-                </li>
+                <li className="sidebarListItem">Reports</li>
               </ul>
             </div>
             <div className="sidebarMenu">
               <h3 className="sidebarTitle">Notifications</h3>
               <ul className="sidebarList">
-                <li className="sidebarListItem">
-                  <MailOutline className="sidebarIcon" />
-                  Mail
-                </li>
-                <li className="sidebarListItem">
-                  <DynamicFeed className="sidebarIcon" />
-                  Feedback
-                </li>
-                <li className="sidebarListItem">
-                  <ChatBubbleOutline className="sidebarIcon" />
-                  Messages
-                </li>
+                <li className="sidebarListItem">Mail</li>
+                <li className="sidebarListItem">Feedback</li>
+                <li className="sidebarListItem">Messages</li>
               </ul>
             </div>
             <div className="sidebarMenu">
               <h3 className="sidebarTitle">Staff</h3>
               <ul className="sidebarList">
-                <li className="sidebarListItem">
-                  <WorkOutline className="sidebarIcon" />
-                  Manage
-                </li>
-                <li className="sidebarListItem">
-                  <Timeline className="sidebarIcon" />
-                  Analytics
-                </li>
-                <li className="sidebarListItem">
-                  <Report className="sidebarIcon" />
-                  Reports
-                </li>
+                <li className="sidebarListItem">Manage</li>
+                <li className="sidebarListItem">Analytics</li>
+                <li className="sidebarListItem">Reports</li>
               </ul>
             </div>
           </div>

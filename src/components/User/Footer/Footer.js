@@ -1,15 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import {
-  Facebook,
-  Instagram,
-  MailOutline,
-  Phone,
-  Pinterest,
-  Room,
-  Twitter,
-} from "@material-ui/icons";
 import {
   Center,
   ContactItem,
@@ -90,18 +80,10 @@ const Footer = () => {
                 slightly believable.
               </Desc>
               <SocialContainer>
-                <SocialIcon color="3B5999">
-                  <Facebook />
-                </SocialIcon>
-                <SocialIcon color="E4405F">
-                  <Instagram />
-                </SocialIcon>
-                <SocialIcon color="55ACEE">
-                  <Twitter />
-                </SocialIcon>
-                <SocialIcon color="E60023">
-                  <Pinterest />
-                </SocialIcon>
+                <SocialIcon color="3B5999"></SocialIcon>
+                <SocialIcon color="E4405F"></SocialIcon>
+                <SocialIcon color="55ACEE"></SocialIcon>
+                <SocialIcon color="E60023"></SocialIcon>
               </SocialContainer>
             </Left>
             <Center>
@@ -164,16 +146,10 @@ const Footer = () => {
             <Right>
               <Title>Contact Us</Title>
               <ContactItem>
-                <Room style={{ marginRight: "10px" }} />B 1/5 Safdarjung Enclave
-                Africa Avenue New Delhi Pin-110029
+                B 1/5 Safdarjung Enclave Africa Avenue New Delhi Pin-110029
               </ContactItem>
-              <ContactItem>
-                <Phone style={{ marginRight: "10px" }} /> (120) 3569310
-              </ContactItem>
-              <ContactItem>
-                <MailOutline style={{ marginRight: "10px" }} />
-                contact@elevashun.com
-              </ContactItem>
+              <ContactItem>(120) 3569310</ContactItem>
+              <ContactItem>contact@elevashun.com</ContactItem>
               <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
             </Right>
           </FooterWrapper>
