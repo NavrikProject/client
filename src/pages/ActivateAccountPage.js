@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import Footer from "../components/User/Footer/Footer";
-import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
+import React, { Suspense, useState } from "react";
+//import Footer from "../components/User/Footer/Footer";
+//import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 import styled from "styled-components";
 import GoToTop from "../components/GoToTop";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../components/utils/Loading";
+
+const NavbarRes = React.lazy(() =>
+  import("../components/Navbar/UserNavbar/NavbarRes")
+);
+const Footer = React.lazy(() => import("../components/User/Footer/Footer"));
+
 const PwdSectionSection = styled.section`
   height: 50vh;
   width: 100%;
@@ -103,30 +109,32 @@ const ActivateAccountPage = () => {
   }, 7000);
   return (
     <>
-      <NavbarRes />
-      <PwdSectionSection>
-        <PwdSectionDiv>
-          <PwdSectionWrapper>
-            <Form onSubmit={activateAccount}>
-              {error && (
-                <p style={{ color: "red", fontSize: "20px" }}>{error}</p>
-              )}
-              {success && (
-                <p style={{ color: "green", fontSize: "20px" }}>{success}</p>
-              )}
-              {loading && <Loading />}
-              <Field>
-                <InputButton>Activate Account</InputButton>
-                <Link to="/login" style={{ textDecoration: "none" }}>
-                  <SignInP> sign in</SignInP>
-                </Link>
-              </Field>
-            </Form>
-          </PwdSectionWrapper>
-        </PwdSectionDiv>
-        <GoToTop />
-      </PwdSectionSection>
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <NavbarRes />
+        <PwdSectionSection>
+          <PwdSectionDiv>
+            <PwdSectionWrapper>
+              <Form onSubmit={activateAccount}>
+                {error && (
+                  <p style={{ color: "red", fontSize: "20px" }}>{error}</p>
+                )}
+                {success && (
+                  <p style={{ color: "green", fontSize: "20px" }}>{success}</p>
+                )}
+                {loading && <Loading />}
+                <Field>
+                  <InputButton>Activate Account</InputButton>
+                  <Link to="/login" style={{ textDecoration: "none" }}>
+                    <SignInP> sign in</SignInP>
+                  </Link>
+                </Field>
+              </Form>
+            </PwdSectionWrapper>
+          </PwdSectionDiv>
+          <GoToTop />
+        </PwdSectionSection>
+        <Footer />
+      </Suspense>
     </>
   );
 };

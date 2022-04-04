@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./App.js";
 // import { ContextProvider } from "./context/Context";
 import { Provider } from "react-redux";
 import { persistor, store } from "./redux/store";

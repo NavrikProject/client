@@ -1,7 +1,7 @@
 import React from "react";
 
 const StudentProfilePage = () => {
-  return <div>Student Profile Page</div>;
+  return <>Student Profile Page</>;
 };
 
 export default StudentProfilePage;

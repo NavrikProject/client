@@ -1,14 +1,20 @@
-import React from "react";
-import Footer from "../components/User/Footer/Footer";
-import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
-import Trainee from "../components/Trainee/Trainee";
-
+import React, { Suspense } from "react";
+//import Footer from "../components/User/Footer/Footer";
+//import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
+//import Trainee from "../components/Trainee/Trainee";
+const NavbarRes = React.lazy(() =>
+  import("../components/Navbar/UserNavbar/NavbarRes")
+);
+const Footer = React.lazy(() => import("../components/User/Footer/Footer"));
+const Trainee = React.lazy(() => import("../components/Trainee/Trainee"));
 const TraineeProfilePage = () => {
   return (
     <React.Fragment>
-      <NavbarRes />
-      <Trainee />
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <NavbarRes />
+        <Trainee />
+        <Footer />
+      </Suspense>
     </React.Fragment>
   );
 };

@@ -1,10 +1,13 @@
+import React, { Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import NavBarAndRes from "../components/Navbar/UserNavbar/NavbarRes";
-import Footer from "../components/User/Footer/Footer";
+//import Footer from "../components/User/Footer/Footer";
 import { removeCourse, clearCart } from "../redux/cartRedux";
-
+const NavbarRes = React.lazy(() =>
+  import("../components/Navbar/UserNavbar/NavbarRes")
+);
+const Footer = React.lazy(() => import("../components/User/Footer/Footer"));
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -165,81 +168,85 @@ const Cart = () => {
 
   return (
     <Container>
-      <NavBarAndRes />
-      <Wrapper>
-        <Title>Your cart</Title>
-        <Top>
-          <Link
-            style={{ textDecoration: "none", color: "white" }}
-            to={`/courses`}
-          >
-            <TopButton>Choose another courses</TopButton>
-          </Link>
-          <TopTexts>
-            <TopText>You added this courses</TopText>
-            <TopText>Your Wishlist (0)</TopText>
-          </TopTexts>
-          <TopButton type="filled">BUY NOW</TopButton>
-        </Top>
-        <Bottom>
-          <Info>
-            {cart?.courses?.length === 0 ? (
-              <>
-                <h1>No courses are added to cart </h1>
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to={`/courses`}
-                >
-                  <TopButton> Add your favorite courses</TopButton>
-                </Link>
-              </>
-            ) : (
-              cart?.courses?.map((course) => (
-                <Product key={course.course_id}>
-                  <ProductDetail>
-                    <Image src="https://t3.ftcdn.net/jpg/02/84/02/36/360_F_284023634_KjMhFyIQvm6Skawcp0izYTsJKvhCPLoZ.jpg" />
-                    <Details>
-                      <ProductName>{course.course_title}</ProductName>
-                      <ProductId>{course.course_desc}</ProductId>
-                    </Details>
-                  </ProductDetail>
-                  <PriceDetail>
-                    <ProductAmountContainer>
-                      <ProductAmount onClick={() => removeFromCart(course)}>
-                        Remove
-                      </ProductAmount>
-                    </ProductAmountContainer>
-                    <ProductPrice>Rs:{course.course_price}</ProductPrice>
-                  </PriceDetail>
-                </Product>
-              ))
-            )}
-            <Hr />
-            <TopButton onClick={() => clearCartHandler()}>Clear cart</TopButton>
-          </Info>
-          <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-            <SummaryItem>
-              <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
-            </SummaryItem>
-            <Link to="/pay">
-              {!user ? (
-                <Link to="/login">
-                  <Button>Login</Button>
-                </Link>
-              ) : (
-                <Button>CHECKOUT NOW</Button>
-              )}
+      <Suspense fallback={<div>Loading...</div>}>
+        <NavbarRes />
+        <Wrapper>
+          <Title>Your cart</Title>
+          <Top>
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to={`/courses`}
+            >
+              <TopButton>Choose another courses</TopButton>
             </Link>
-          </Summary>
-        </Bottom>
-      </Wrapper>
-      <Footer />
+            <TopTexts>
+              <TopText>You added this courses</TopText>
+              <TopText>Your Wishlist (0)</TopText>
+            </TopTexts>
+            <TopButton type="filled">BUY NOW</TopButton>
+          </Top>
+          <Bottom>
+            <Info>
+              {cart?.courses?.length === 0 ? (
+                <>
+                  <h1>No courses are added to cart </h1>
+                  <Link
+                    style={{ textDecoration: "none", color: "white" }}
+                    to={`/courses`}
+                  >
+                    <TopButton> Add your favorite courses</TopButton>
+                  </Link>
+                </>
+              ) : (
+                cart?.courses?.map((course) => (
+                  <Product key={course.course_id}>
+                    <ProductDetail>
+                      <Image src="https://t3.ftcdn.net/jpg/02/84/02/36/360_F_284023634_KjMhFyIQvm6Skawcp0izYTsJKvhCPLoZ.jpg" />
+                      <Details>
+                        <ProductName>{course.course_title}</ProductName>
+                        <ProductId>{course.course_desc}</ProductId>
+                      </Details>
+                    </ProductDetail>
+                    <PriceDetail>
+                      <ProductAmountContainer>
+                        <ProductAmount onClick={() => removeFromCart(course)}>
+                          Remove
+                        </ProductAmount>
+                      </ProductAmountContainer>
+                      <ProductPrice>Rs:{course.course_price}</ProductPrice>
+                    </PriceDetail>
+                  </Product>
+                ))
+              )}
+              <Hr />
+              <TopButton onClick={() => clearCartHandler()}>
+                Clear cart
+              </TopButton>
+            </Info>
+            <Summary>
+              <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+              <SummaryItem>
+                <SummaryItemText>Subtotal</SummaryItemText>
+                <SummaryItemPrice>$ 80</SummaryItemPrice>
+              </SummaryItem>
+              <SummaryItem type="total">
+                <SummaryItemText>Total</SummaryItemText>
+                <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              </SummaryItem>
+              <Link to="/pay">
+                {!user ? (
+                  <Link to="/login">
+                    <Button>Login</Button>
+                  </Link>
+                ) : (
+                  <Button>CHECKOUT NOW</Button>
+                )}
+              </Link>
+            </Summary>
+          </Bottom>
+        </Wrapper>
+        <Footer />
+      </Suspense>
     </Container>
   );
 };

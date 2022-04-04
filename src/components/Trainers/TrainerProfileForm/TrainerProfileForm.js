@@ -5,7 +5,7 @@ import TrainerForm2 from "./TrainerForm2.js";
 import Form3 from "../../Forms/ProfileForm/Form3.js";
 import GoToTop from "../../GoToTop.js";
 import Model from "./Model";
-import TrainerDetailForm from "./TrainerProfileDetailForm";
+import TrainerDetailForm from "./TrainerProfileDetailForm.js";
 import {
   DetailsFlex,
   DetailsFlex1,
@@ -28,7 +28,7 @@ import {
 import TrainerImageForm from "./TrainerImageForm.js";
 import TrainerProfileUpdateForm from "./TrainerProfileUpdateForm.js";
 import BankDetails from "./BankDetails.js";
-import Loading from "../../utils/Loading";
+import Loading from "../../utils/Loading.js";
 const Trainer = () => {
   const [personalForm, setPersonalForm] = useState(false);
   const [additionalForm, setAdditionalForm] = useState(false);

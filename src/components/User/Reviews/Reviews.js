@@ -16,8 +16,11 @@ import {
   SlideDiv,
   Slide,
   ReviewDiv,
-} from "./ReviewsElements";
+} from "./ReviewsElements.js";
 import "./styles.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 const reviews = [
   {
     id: 1,
@@ -72,6 +75,15 @@ const reviews = [
 ];
 
 const Reviews = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoPlay: 3000,
+    arrows: true,
+  };
   return (
     <ReviewsSect>
       <ReviewsSection>
@@ -80,45 +92,39 @@ const Reviews = () => {
           <LineAfter />
           <Container>
             <Wrapper>
-              {/* <Carousel>
-                {reviews.map((review) => (
-                  <div>
-                    <img src={review.image} alt="" />
-                    <p className="legend">{review.description}</p>
-                  </div>
-                ))}
-              </Carousel> */}
-              <SlideDiv>
-                <Slide>
-                  <ImgContainer>
-                    <Image
-                      alt="review"
-                      src="https://images.pexels.com/photos/6465937/pexels-photo-6465937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    />
-                  </ImgContainer>
-                  <ReviewContainer>
-                    <ReviewDescription>RPA Basics</ReviewDescription>
-                    <ReviewPersonTitle>Mike</ReviewPersonTitle>
-                    <ReviewDiv>
-                      <ReviewDescription>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Vel cum perspiciatis commodi, facilis culpa
-                        voluptas dolorum hic molestias animi nam?Lorem ipsum,
-                        dolor sit amet consectetur adipisicing elit. Vel cum
-                        perspiciatis commodi, facilis culpa voluptas dolorum hic
-                        molestias animi nam?
-                      </ReviewDescription>
-                    </ReviewDiv>
-                    <Rating>
-                      5 <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                    </Rating>
-                  </ReviewContainer>
-                </Slide>
-              </SlideDiv>
+              {/* <Slider>
+                <SlideDiv>
+                  <Slide>
+                    <ImgContainer>
+                      <Image
+                        alt="review"
+                        src="https://images.pexels.com/photos/6465937/pexels-photo-6465937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                      />
+                    </ImgContainer>
+                    <ReviewContainer>
+                      <ReviewDescription>RPA Basics</ReviewDescription>
+                      <ReviewPersonTitle>Mike</ReviewPersonTitle>
+                      <ReviewDiv>
+                        <ReviewDescription>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Vel cum perspiciatis commodi, facilis culpa
+                          voluptas dolorum hic molestias animi nam?Lorem ipsum,
+                          dolor sit amet consectetur adipisicing elit. Vel cum
+                          perspiciatis commodi, facilis culpa voluptas dolorum
+                          hic molestias animi nam?
+                        </ReviewDescription>
+                      </ReviewDiv>
+                      <Rating>
+                        5 <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                      </Rating>
+                    </ReviewContainer>
+                  </Slide>
+                </SlideDiv>
+              </Slider> */}
             </Wrapper>
           </Container>
         </ReviewsWrapper>

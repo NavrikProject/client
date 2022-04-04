@@ -1,11 +1,21 @@
-import React from "react";
-import NavbarRes from "../../components/Navbar/UserNavbar/NavbarRes";
-import JoinNowForm from "../../components/Trainers/multiStepForm/JoinNowForm";
+import React, { Suspense } from "react";
+//import NavbarRes from "../../components/Navbar/UserNavbar/NavbarRes";
+//import JoinNowForm from "../../components/Trainers/multiStepForm/JoinNowForm";
+const NavbarRes = React.lazy(() =>
+  import("../../components/Navbar/UserNavbar/NavbarRes")
+);
+const Footer = React.lazy(() => import("../../components/User/Footer/Footer"));
+const JoinNowForm = React.lazy(() =>
+  import("../../components/Trainers/multiStepForm/JoinNowForm")
+);
 const JoinNow = () => {
   return (
     <>
-      <NavbarRes />
-      <JoinNowForm />
+      <Suspense fallback={<div>Loading...</div>}>
+        <NavbarRes />
+        <JoinNowForm />
+        <Footer />
+      </Suspense>
     </>
   );
 };

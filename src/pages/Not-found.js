@@ -1,16 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ErrorPage from "../images/404-error-page.jpg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
-import Footer from "../components/User/Footer/Footer";
-
+//import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
+//import Footer from "../components/User/Footer/Footer";
+const NavbarRes = React.lazy(() =>
+  import("../components/Navbar/UserNavbar/NavbarRes")
+);
+const Footer = React.lazy(() => import("../components/User/Footer/Footer"));
 const ErrorSection = styled.section`
   width: 100%;
   height: auto;
   padding-bottom: 30px;
 `;
-
 const ErrorPageDiv = styled.div`
   width: 90%;
   margin: 0 auto;
@@ -41,20 +43,22 @@ const ErrorBtn = styled.button`
 const NotFound = () => {
   return (
     <>
-      <NavbarRes />
-      <ErrorSection>
-        <ErrorPageDiv>
-          <ErrorImg src={ErrorPage} alt="" />
-          <ErrorTitle>
-            Oh no!, Sorry We couldn't find anything. <br />
-            Please go back to the Home page.
-          </ErrorTitle>
-          <Link to={`/`} style={{ textDecoration: "none", color: "white" }}>
-            <ErrorBtn>Back to Home</ErrorBtn>
-          </Link>
-        </ErrorPageDiv>
-      </ErrorSection>
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <NavbarRes />
+        <ErrorSection>
+          <ErrorPageDiv>
+            <ErrorImg src={ErrorPage} alt="" />
+            <ErrorTitle>
+              Oh no!, Sorry We couldn't find anything. <br />
+              Please go back to the Home page.
+            </ErrorTitle>
+            <Link to={`/`} style={{ textDecoration: "none", color: "white" }}>
+              <ErrorBtn>Back to Home</ErrorBtn>
+            </Link>
+          </ErrorPageDiv>
+        </ErrorSection>
+        <Footer />
+      </Suspense>
     </>
   );
 };
