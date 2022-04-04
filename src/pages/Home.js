@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 //import HomeSection from "../components/User/Home/HomeSection";
 //import About from "../components/User/About/About";
@@ -25,29 +26,29 @@ const Footer = React.lazy(() => import("../components/User/Footer/Footer"));
 const Home = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <HomeSection />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <Courses />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <About />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <Trainers />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NewsLetter />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <Reviews />
       </Suspense>
       {/*  <OurClients /> */}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <Footer />
       </Suspense>
     </>

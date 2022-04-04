@@ -9,7 +9,6 @@ export const Nav = styled.nav`
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 0%,

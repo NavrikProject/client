@@ -7,6 +7,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../components/utils/Loading";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
 
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
@@ -109,7 +110,7 @@ const ActivateAccountPage = () => {
   }, 7000);
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <PwdSectionSection>
           <PwdSectionDiv>

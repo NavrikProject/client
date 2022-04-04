@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 //import Footer from "../components/User/Footer/Footer";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
+
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
 );
@@ -43,7 +45,7 @@ const ErrorBtn = styled.button`
 const NotFound = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <ErrorSection>
           <ErrorPageDiv>

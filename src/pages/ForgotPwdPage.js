@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 //import ForgotPassword from "../components/Forms/PasswordForm/ForgotPassword";
 //import Footer from "../components/User/Footer/Footer";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
 
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
@@ -13,7 +14,7 @@ const ForgotPassword = React.lazy(() =>
 const ForgotPwdPage = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <ForgotPassword />
         <Footer />

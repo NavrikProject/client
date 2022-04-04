@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import LineWaveLoader from "../../components/utils/LineWaveLoader";
 //import NavbarRes from "../../components/Navbar/UserNavbar/NavbarRes";
 //import JoinNowForm from "../../components/Trainers/multiStepForm/JoinNowForm";
 const NavbarRes = React.lazy(() =>
@@ -11,7 +12,7 @@ const JoinNowForm = React.lazy(() =>
 const JoinNow = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <JoinNowForm />
         <Footer />

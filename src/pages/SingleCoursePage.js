@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 //import Footer from "../components/User/Footer/Footer";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 //import SingleCourse from "../components/User/Courses/CourseCard/SingleCourse/SingleCourse";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
 
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
@@ -14,7 +15,7 @@ const SingleCourse = React.lazy(() =>
 const SingleCoursePage = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <SingleCourse />
         <Footer />

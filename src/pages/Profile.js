@@ -2,6 +2,8 @@ import React, { Suspense } from "react";
 //import Footer from "../components/User/Footer/Footer";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 //import SingleProfile from "../components/Forms/ProfileForm/SingleProfile";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
+
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
 );
@@ -13,7 +15,7 @@ const SingleProfile = React.lazy(() =>
 const Profile = () => {
   return (
     <React.Fragment>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <SingleProfile />
         <Footer />

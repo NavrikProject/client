@@ -2,6 +2,8 @@ import React, { Suspense } from "react";
 //import Footer from "../components/User/Footer/Footer";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 //import Trainee from "../components/Trainee/Trainee";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
+
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
 );
@@ -10,7 +12,7 @@ const Trainee = React.lazy(() => import("../components/Trainee/Trainee"));
 const TraineeProfilePage = () => {
   return (
     <React.Fragment>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <Trainee />
         <Footer />

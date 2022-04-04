@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 //import Footer from "../components/User/Footer/Footer";
 //import NavbarRes from "../components/Navbar/UserNavbar/NavbarRes";
 //import Terms from "../components/Generals/Terms";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
 
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
@@ -12,7 +13,7 @@ const Terms = React.lazy(() => import("../components/Generals/Terms"));
 const TermsCondition = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <Terms />
         <Footer />

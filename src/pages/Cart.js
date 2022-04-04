@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 //import Footer from "../components/User/Footer/Footer";
 import { removeCourse, clearCart } from "../redux/cartRedux";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
+
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
 );
@@ -168,7 +170,7 @@ const Cart = () => {
 
   return (
     <Container>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
         <Wrapper>
           <Title>Your cart</Title>

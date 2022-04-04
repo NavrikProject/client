@@ -9,6 +9,7 @@ import ScrollButton from "./components/ScrollToTop";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LineWaveLoader from "./components/utils/LineWaveLoader";
 //import Home from "./pages/Home";
 //import SingleCoursePage from "./pages/SingleCoursePage.js";
 //import SingleTrainerPage from "./pages/SingleTrainerPage.js";
@@ -85,7 +86,7 @@ const App = () => {
   return (
     <>
       <ToastContainer />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <CookieConsent />
       </Suspense>
       <Router>
@@ -94,7 +95,7 @@ const App = () => {
             path="/"
             exact
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <Home />
               </Suspense>
             }
@@ -102,7 +103,7 @@ const App = () => {
           <Route
             path="/job-seeker"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <JobSeekerHomePage />
               </Suspense>
             }
@@ -110,7 +111,7 @@ const App = () => {
           <Route
             path="/recruiter"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <RecruiterHomePage />
               </Suspense>
             }
@@ -118,7 +119,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <NotFound />
               </Suspense>
             }
@@ -126,7 +127,7 @@ const App = () => {
           <Route
             path="/about"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <AboutUs />
               </Suspense>
             }
@@ -134,7 +135,7 @@ const App = () => {
           <Route
             path="/register"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <Register />
               </Suspense>
             }
@@ -142,7 +143,7 @@ const App = () => {
           <Route
             path="/login"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <Login />
               </Suspense>
             }
@@ -150,7 +151,7 @@ const App = () => {
           <Route
             path="/profile"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <Profile />
               </Suspense>
             }
@@ -159,7 +160,7 @@ const App = () => {
           <Route
             path="/terms-conditions"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <Terms />
               </Suspense>
             }
@@ -167,7 +168,7 @@ const App = () => {
           <Route
             path="/privacy"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <PrivacyPage />
               </Suspense>
             }
@@ -175,7 +176,7 @@ const App = () => {
           <Route
             path="/forgot-password"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <ForgotPwdPage />
               </Suspense>
             }
@@ -183,7 +184,7 @@ const App = () => {
           <Route
             path="/trainer/your-courses/:id"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <YourCoursePage />
               </Suspense>
             }
@@ -193,7 +194,7 @@ const App = () => {
             exact
             path={`/user/activate/reset-password/:id`}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <ResetPwdPage />
               </Suspense>
             }
@@ -202,7 +203,7 @@ const App = () => {
             exact
             path={`/user/activate/account/:id`}
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <ActivateAccountPage />
               </Suspense>
             }
@@ -211,7 +212,7 @@ const App = () => {
           <Route
             path="/courses"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <AllCoursesPage />
               </Suspense>
             }
@@ -220,7 +221,7 @@ const App = () => {
           <Route
             path="/courses/domain-skills/:id"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <SingleCoursePage />
               </Suspense>
             }
@@ -228,7 +229,7 @@ const App = () => {
           <Route
             path="/courses/it-skills/:id"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <SingleCoursePage />
               </Suspense>
             }
@@ -236,7 +237,7 @@ const App = () => {
           <Route
             path="/courses/software-development/:id"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <SingleCoursePage />
               </Suspense>
             }
@@ -245,7 +246,7 @@ const App = () => {
           <Route
             path="/trainers"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <AllTrainerPage />
               </Suspense>
             }
@@ -254,7 +255,7 @@ const App = () => {
           <Route
             path="/trainers/details/:id"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <SingleTrainerPage />
               </Suspense>
             }
@@ -265,7 +266,7 @@ const App = () => {
               path="/trainee"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <TraineeHomePage />
                 </Suspense>
               }
@@ -275,7 +276,7 @@ const App = () => {
               path="/"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Home />
                 </Suspense>
               }
@@ -284,7 +285,7 @@ const App = () => {
           <Route
             path="/trainer/join-now"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <JoinNow />
               </Suspense>
             }
@@ -293,7 +294,7 @@ const App = () => {
             <Route
               path="/trainee/profile/update/:id"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <TraineeProfilePage />
                 </Suspense>
               }
@@ -302,7 +303,7 @@ const App = () => {
             <Route
               path="*"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Navigate to="/Not-found" />
                 </Suspense>
               }
@@ -312,7 +313,7 @@ const App = () => {
             <Route
               path="/trainer/profile/update/:id"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <TrainerProfilePage />
                 </Suspense>
               }
@@ -321,7 +322,7 @@ const App = () => {
             <Route
               path="*"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Navigate to="/Not-found" />
                 </Suspense>
               }
@@ -333,7 +334,7 @@ const App = () => {
               path="/trainer"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <TrainerHomePage />
                 </Suspense>
               }
@@ -343,7 +344,7 @@ const App = () => {
               path="/"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Home />
                 </Suspense>
               }
@@ -355,7 +356,7 @@ const App = () => {
               path="/trainer"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <TrainerHomePage />
                 </Suspense>
               }
@@ -365,7 +366,7 @@ const App = () => {
               path="/"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Home />
                 </Suspense>
               }
@@ -377,7 +378,7 @@ const App = () => {
               path="/job-seeker"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <JobSeekerHomePage />
                 </Suspense>
               }
@@ -387,7 +388,7 @@ const App = () => {
               path="/"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Home />
                 </Suspense>
               }
@@ -396,7 +397,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <Home />
               </Suspense>
             }
@@ -405,7 +406,7 @@ const App = () => {
           <Route
             path="/user/admin/dashboard/add-new-course"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<LineWaveLoader />}>
                 <AddNewCoursePage />
               </Suspense>
             }
@@ -414,7 +415,7 @@ const App = () => {
             <Route
               path="/user/admin/dashboard"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Dashboard />
                 </Suspense>
               }
@@ -423,7 +424,7 @@ const App = () => {
             <Route
               path="/login"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Navigate to="/login" />
                 </Suspense>
               }
@@ -435,7 +436,7 @@ const App = () => {
               path="/recruiter"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <RecruiterHomePage />
                 </Suspense>
               }
@@ -445,7 +446,7 @@ const App = () => {
               path="/"
               exact
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<LineWaveLoader />}>
                   <Home />
                 </Suspense>
               }

@@ -5,7 +5,13 @@ export const HomeSectionComponent = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-image: url("https://res.cloudinary.com/ddzagipmh/image/upload/v1644037126/17973908_zwmwyf.jpg");
+  /* background-image: url("https://res.cloudinary.com/ddzagipmh/image/upload/v1644037126/17973908_zwmwyf.jpg"); */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(245, 245, 245, 1) 32%,
+    rgba(224, 251, 252, 1) 100%
+  );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

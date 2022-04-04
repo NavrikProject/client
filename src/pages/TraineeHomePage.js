@@ -4,6 +4,7 @@ import React, { Suspense } from "react";
 //import Courses from "../components/User/Courses/Courses";
 //import Footer from "../components/User/Footer/Footer";
 //import AboutUs from "../components/User/About/About";
+import LineWaveLoader from "../components/utils/LineWaveLoader";
 
 const NavbarRes = React.lazy(() =>
   import("../components/Navbar/UserNavbar/NavbarRes")
@@ -18,19 +19,19 @@ const AboutUs = React.lazy(() => import("../components/User/About/About"));
 const TraineeHomePage = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <NavbarRes />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <SingleProfile />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <Courses />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <AboutUs />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LineWaveLoader />}>
         <Footer />
       </Suspense>
     </>
