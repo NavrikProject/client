@@ -38,25 +38,52 @@ export const LineAfter = styled.div`
     background-color: #9926f0;
   }
 `;
-export const Container = styled.div``;
 
-export const SlideDiv = styled.div`
-  white-space: nowrap;
-`;
-export const Wrapper = styled.div`
+export const ContainerReview = styled.div`
   margin: 0 auto;
   overflow: hidden;
-  max-width: 50vw;
+  width: 50%;
   height: auto;
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 10px 0;
 `;
-export const ReviewDescription = styled.p`
-  word-wrap: break-word;
+export const Container = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 `;
+export const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  transition: all 1.5s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}%);
+`;
+
+export const Arrow = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+  left: ${(props) => props.direction === "left" && "10px"};
+  right: ${(props) => props.direction === "right" && "10px"};
+  opacity: 0.5;
+`;
+export const SlideDiv = styled.div`
+  width: 100% !important;
+`;
+export const ReviewDescription = styled.p``;
 export const ReviewDiv = styled.div`
-  height: 60px;
   width: 100%;
 `;
 export const ReviewPersonTitle = styled.h1`
@@ -68,13 +95,10 @@ export const ReviewPersonTitle = styled.h1`
 export const Rating = styled.div`
   color: gold;
 `;
-export const Slide = styled.div`
-  height: 400px;
-  width: 100%;
-  border-radius: 40px;
-  display: inline-block;
+export const QuoteSpan = styled.span`
+  font-size: 25px;
+  padding: 5px;
 `;
-
 export const ImgContainer = styled.div`
   width: 150px;
   height: 150px;

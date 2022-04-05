@@ -8,6 +8,7 @@ import {
   FooterSection,
   FooterText,
   FooterWrapper,
+  IconSpan,
   Left,
   List,
   ListItem,
@@ -146,16 +147,29 @@ const Footer = () => {
             <Right>
               <Title>Contact Us</Title>
               <ContactItem>
+                <IconSpan>
+                  <i className="fa-solid fa-location-dot"></i>
+                </IconSpan>
                 B 1/5 Safdarjung Enclave Africa Avenue New Delhi Pin-110029
               </ContactItem>
-              <ContactItem>(120) 3569310</ContactItem>
-              <ContactItem>contact@elevashun.com</ContactItem>
+              <ContactItem>
+                <IconSpan>
+                  <i class="fas fa-phone"></i>
+                </IconSpan>
+                (120) 3569310
+              </ContactItem>
+              <ContactItem>
+                <IconSpan>
+                  <i class="fas fa-envelope"></i>
+                </IconSpan>
+                contact@practilearn.com
+              </ContactItem>
               <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
             </Right>
           </FooterWrapper>
           <FooterText>
-            Elevation © 2022 | This site is developed by Navrik Team. All rights
-            reserved.
+            Practilearn © 2022 | This site is developed by Navrik Team. All
+            rights reserved.
           </FooterText>
         </FooterSection>
       </FooterSect>

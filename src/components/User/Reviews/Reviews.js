@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   ReviewsSect,
   ReviewsSection,
@@ -14,13 +14,13 @@ import {
   ReviewPersonTitle,
   Rating,
   SlideDiv,
-  Slide,
   ReviewDiv,
+  Arrow,
+  QuoteSpan,
+  ContainerReview,
 } from "./ReviewsElements.js";
 import "./styles.css";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+
 const reviews = [
   {
     id: 1,
@@ -75,14 +75,13 @@ const reviews = [
 ];
 
 const Reviews = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoPlay: 3000,
-    arrows: true,
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
   };
   return (
     <ReviewsSect>
@@ -90,43 +89,50 @@ const Reviews = () => {
         <ReviewsWrapper>
           <ReviewsTitle>What our students Said</ReviewsTitle>
           <LineAfter />
-          <Container>
-            <Wrapper>
-              {/* <Slider>
+          <ContainerReview>
+            <Container>
+              <Arrow direction="left" onClick={() => handleClick("left")}>
+                <i className="fa-solid fa-arrow-left"></i>
+              </Arrow>
+              <Wrapper slideIndex={slideIndex}>
                 <SlideDiv>
-                  <Slide>
-                    <ImgContainer>
-                      <Image
-                        alt="review"
-                        src="https://images.pexels.com/photos/6465937/pexels-photo-6465937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                      />
-                    </ImgContainer>
-                    <ReviewContainer>
-                      <ReviewDescription>RPA Basics</ReviewDescription>
-                      <ReviewPersonTitle>Mike</ReviewPersonTitle>
-                      <ReviewDiv>
-                        <ReviewDescription>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Vel cum perspiciatis commodi, facilis culpa
-                          voluptas dolorum hic molestias animi nam?Lorem ipsum,
-                          dolor sit amet consectetur adipisicing elit. Vel cum
-                          perspiciatis commodi, facilis culpa voluptas dolorum
-                          hic molestias animi nam?
-                        </ReviewDescription>
-                      </ReviewDiv>
-                      <Rating>
-                        5 <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                      </Rating>
-                    </ReviewContainer>
-                  </Slide>
+                  <ImgContainer>
+                    <Image
+                      alt="review"
+                      src="https://images.unsplash.com/photo-1645389418083-f709c6ef7a66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                    />
+                  </ImgContainer>
+                  <ReviewContainer>
+                    <ReviewDescription>RPA advanced course</ReviewDescription>
+                    <ReviewPersonTitle>Mahesh B</ReviewPersonTitle>
+                    <ReviewDiv>
+                      <ReviewDescription>
+                        <QuoteSpan>
+                          <i class="fas fa-quote-left"></i>
+                        </QuoteSpan>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Fugit itaque odio, dolore ut delectus
+                        exercitationem praesentium et quia esse labore!
+                        <QuoteSpan>
+                          <i class="fas fa-quote-right"></i>
+                        </QuoteSpan>
+                      </ReviewDescription>
+                    </ReviewDiv>
+                    <Rating>
+                      5 <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </Rating>
+                  </ReviewContainer>
                 </SlideDiv>
-              </Slider> */}
-            </Wrapper>
-          </Container>
+              </Wrapper>
+              <Arrow direction="right" onClick={() => handleClick("right")}>
+                <i className="fa-solid fa-arrow-right"></i>
+              </Arrow>
+            </Container>
+          </ContainerReview>
         </ReviewsWrapper>
       </ReviewsSection>
     </ReviewsSect>

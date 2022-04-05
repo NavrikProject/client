@@ -97,7 +97,10 @@ export const ContactItem = styled.div`
   align-items: center;
   color: #111;
 `;
-
+export const IconSpan = styled.span`
+  padding-right: 10px;
+  font-size: 18px;
+`;
 export const Payment = styled.img`
   width: 50%;
 `;
