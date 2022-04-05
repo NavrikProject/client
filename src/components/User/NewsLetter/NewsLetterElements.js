@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import BgImg from "../../../images/subscribebg.jpeg";
 export const NewsLetterSect = styled.section`
   height: 60vh;
-  background: url("https://images.pexels.com/photos/3769120/pexels-photo-3769120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   width: 100%;
+  background: url("https://navrik.blob.core.windows.net/navrikimage/pexels-photo-3769120.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+
+  //background: linear-gradient(to left, #42275a, #734b6d);
 `;
 export const NewsLetterSection = styled.section`
   width: 90%;

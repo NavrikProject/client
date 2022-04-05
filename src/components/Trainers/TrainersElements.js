@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const TrainersSect = styled.section`
   height: auto !important;
   width: 100%;
-  background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
+  background-image: url("https://navrik.blob.core.windows.net/navrikimage/abstract-background-with-squares_23-2148995948.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
