@@ -1,7 +1,7 @@
 {
   "name": "practilearn-training-programme",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://blue-desert-0c4599300.1.azurestaticapps.net",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",

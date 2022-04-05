@@ -89,8 +89,7 @@ const App = () => {
       <Suspense fallback={<LineWaveLoader />}>
         <CookieConsent />
       </Suspense>
-      <Router>
-        {" "}
+      <Router basename="/">
         <Suspense fallback={<LineWaveLoader />}>
           <Routes>
             <Route path="/" exact element={<Home />} />
