@@ -19,7 +19,6 @@ import {
   QuoteSpan,
   ContainerReview,
 } from "./ReviewsElements.js";
-import "./styles.css";
 
 const Reviews = () => {
   const [slideIndex, setSlideIndex] = useState(0);

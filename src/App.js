@@ -90,369 +90,118 @@ const App = () => {
         <CookieConsent />
       </Suspense>
       <Router>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <Home />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/job-seeker"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <JobSeekerHomePage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/recruiter"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <RecruiterHomePage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <NotFound />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <AboutUs />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <Register />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <Login />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <Profile />
-              </Suspense>
-            }
-          />
-          {/* current it is commented out <Route path="/trainee/cart" element={<Cart />} /> */}
-          <Route
-            path="/terms-conditions"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <Terms />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/privacy"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <PrivacyPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/forgot-password"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <ForgotPwdPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/trainer/your-courses/:id"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <YourCoursePage />
-              </Suspense>
-            }
-          />
+        {" "}
+        <Suspense fallback={<LineWaveLoader />}>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/job-seeker" element={<JobSeekerHomePage />} />
+            <Route path="/recruiter" element={<RecruiterHomePage />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            {/* current it is commented out <Route path="/trainee/cart" element={<Cart />} /> */}
+            <Route path="/terms-conditions" element={<Terms />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/forgot-password" element={<ForgotPwdPage />} />
+            <Route
+              path="/trainer/your-courses/:id"
+              element={<YourCoursePage />}
+            />
 
-          <Route
-            exact
-            path={`/user/activate/reset-password/:id`}
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <ResetPwdPage />
-              </Suspense>
-            }
-          />
-          <Route
-            exact
-            path={`/user/activate/account/:id`}
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <ActivateAccountPage />
-              </Suspense>
-            }
-          />
-          {/* all courses */}
-          <Route
-            path="/courses"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <AllCoursesPage />
-              </Suspense>
-            }
-          />
-          {/* single course page */}
-          <Route
-            path="/courses/domain-skills/:id"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <SingleCoursePage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/courses/it-skills/:id"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <SingleCoursePage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/courses/software-development/:id"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <SingleCoursePage />
-              </Suspense>
-            }
-          />
-          {/* all trainers route*/}
-          <Route
-            path="/trainers"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <AllTrainerPage />
-              </Suspense>
-            }
-          />
-          {/* sp single trainer page */}
-          <Route
-            path="/trainers/details/:id"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <SingleTrainerPage />
-              </Suspense>
-            }
-          />
-          {/* trainee home page after login */}
-          {user?.type === "trainee" ? (
             <Route
-              path="/trainee"
               exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <TraineeHomePage />
-                </Suspense>
-              }
+              path={`/user/activate/reset-password/:id`}
+              element={<ResetPwdPage />}
             />
-          ) : (
             <Route
-              path="/"
               exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Home />
-                </Suspense>
-              }
+              path={`/user/activate/account/:id`}
+              element={<ActivateAccountPage />}
             />
-          )}
-          <Route
-            path="/trainer/join-now"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <JoinNow />
-              </Suspense>
-            }
-          />
-          {user?.type === "trainee" ? (
+            {/* all courses */}
+            <Route path="/courses" element={<AllCoursesPage />} />
+            {/* single course page */}
             <Route
-              path="/trainee/profile/update/:id"
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <TraineeProfilePage />
-                </Suspense>
-              }
+              path="/courses/domain-skills/:id"
+              element={<SingleCoursePage />}
             />
-          ) : (
             <Route
-              path="*"
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Navigate to="/Not-found" />
-                </Suspense>
-              }
+              path="/courses/it-skills/:id"
+              element={<SingleCoursePage />}
             />
-          )}
-          {user?.type === "trainer" ? (
             <Route
-              path="/trainer/profile/update/:id"
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <TrainerProfilePage />
-                </Suspense>
-              }
+              path="/courses/software-development/:id"
+              element={<SingleCoursePage />}
             />
-          ) : (
+            {/* all trainers route*/}
+            <Route path="/trainers" element={<AllTrainerPage />} />
+            {/* sp single trainer page */}
             <Route
-              path="*"
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Navigate to="/Not-found" />
-                </Suspense>
-              }
+              path="/trainers/details/:id"
+              element={<SingleTrainerPage />}
             />
-          )}
-          {/* trainer home page after login */}
-          {user?.type === "trainer" ? (
+            {/* trainee home page after login */}
+            {user?.type === "trainee" ? (
+              <Route path="/trainee" exact element={<TraineeHomePage />} />
+            ) : (
+              <Route path="/" exact element={<Home />} />
+            )}
+            <Route path="/trainer/join-now" element={<JoinNow />} />
+            {user?.type === "trainee" ? (
+              <Route
+                path="/trainee/profile/update/:id"
+                element={<TraineeProfilePage />}
+              />
+            ) : (
+              <Route path="*" element={<Navigate to="/Not-found" />} />
+            )}
+            {user?.type === "trainer" ? (
+              <Route
+                path="/trainer/profile/update/:id"
+                element={<TrainerProfilePage />}
+              />
+            ) : (
+              <Route path="*" element={<Navigate to="/Not-found" />} />
+            )}
+            {/* trainer home page after login */}
+            {user?.type === "trainer" ? (
+              <Route path="/trainer" exact element={<TrainerHomePage />} />
+            ) : (
+              <Route path="/" exact element={<Home />} />
+            )}
+            {/* trainer home page after login */}
+            {user?.type === "trainer" ? (
+              <Route path="/trainer" exact element={<TrainerHomePage />} />
+            ) : (
+              <Route path="/" exact element={<Home />} />
+            )}
+            {/* job seeker home page after login */}
+            {user?.type === "job-seeker" ? (
+              <Route path="/job-seeker" exact element={<JobSeekerHomePage />} />
+            ) : (
+              <Route path="/" exact element={<Home />} />
+            )}
+            <Route path="*" element={<Home />} />
+            {/* Trainer section */}
             <Route
-              path="/trainer"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <TrainerHomePage />
-                </Suspense>
-              }
+              path="/user/admin/dashboard/add-new-course"
+              element={<AddNewCoursePage />}
             />
-          ) : (
-            <Route
-              path="/"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-          )}
-          {/* trainer home page after login */}
-          {user?.type === "trainer" ? (
-            <Route
-              path="/trainer"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <TrainerHomePage />
-                </Suspense>
-              }
-            />
-          ) : (
-            <Route
-              path="/"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-          )}
-          {/* job seeker home page after login */}
-          {user?.type === "job-seeker" ? (
-            <Route
-              path="/job-seeker"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <JobSeekerHomePage />
-                </Suspense>
-              }
-            />
-          ) : (
-            <Route
-              path="/"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-          )}
-          <Route
-            path="*"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <Home />
-              </Suspense>
-            }
-          />
-          {/* Trainer section */}
-          <Route
-            path="/user/admin/dashboard/add-new-course"
-            element={
-              <Suspense fallback={<LineWaveLoader />}>
-                <AddNewCoursePage />
-              </Suspense>
-            }
-          />
-          {user?.role === 1 ? (
-            <Route
-              path="/user/admin/dashboard"
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Dashboard />
-                </Suspense>
-              }
-            />
-          ) : (
-            <Route
-              path="/login"
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Navigate to="/login" />
-                </Suspense>
-              }
-            />
-          )}
-          {/* recruiter home page */}
-          {user?.type === "recruiter" ? (
-            <Route
-              path="/recruiter"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <RecruiterHomePage />
-                </Suspense>
-              }
-            />
-          ) : (
-            <Route
-              path="/"
-              exact
-              element={
-                <Suspense fallback={<LineWaveLoader />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-          )}
-        </Routes>
+            {user?.role === 1 ? (
+              <Route path="/user/admin/dashboard" element={<Dashboard />} />
+            ) : (
+              <Route path="/login" element={<Navigate to="/login" />} />
+            )}
+            {/* recruiter home page */}
+            {user?.type === "recruiter" ? (
+              <Route path="/recruiter" exact element={<RecruiterHomePage />} />
+            ) : (
+              <Route path="/" exact element={<Home />} />
+            )}
+          </Routes>
+        </Suspense>
       </Router>
       <ScrollButton />
     </>
