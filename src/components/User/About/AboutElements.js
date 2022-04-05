@@ -2,9 +2,10 @@ import styled from "styled-components";
 export const AboutSect = styled.section`
   height: 100vh;
   width: 100%;
+  background-color: #f2f2f2;
 `;
-export const AboutSection = styled.section`
-  width: 90%;
+export const AboutSection = styled.div`
+  width: 70%;
   margin: 0 auto;
   padding: 50px 0px;
 `;
