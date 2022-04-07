@@ -93,7 +93,7 @@ const JoinNowForm = () => {
   useEffect(() => {
     const getCourseByTitles = async () => {
       const res = await axios.get(
-        `https://navriktrainingserverside.azurewebsites.net/courses/master?category=${category}`
+        `https://navriktrainingserverside.azurewebsites.net/api/courses/master?category=${category}`
       );
       setMasterCourses(res.data);
     };
