@@ -93,9 +93,14 @@ const Trainer = () => {
           headers: { authorization: "Bearer " + user.accessToken },
         }
       );
+      if(res.data.notfound){
+      setLoading(false);
+      setPersonalForm(false);
+      }else{
       setTrainerDetails(res.data);
       setLoading(false);
       setPersonalForm(false);
+      }
     };
     getTrainerProfileDetails();
   }, [user.id, user.accessToken]);
