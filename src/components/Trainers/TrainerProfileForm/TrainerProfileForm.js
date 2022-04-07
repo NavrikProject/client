@@ -94,6 +94,7 @@ const Trainer = () => {
         }
       );
       setTrainerDetails(res.data);
+      setLoading(false);
       setPersonalForm(false);
     };
     getTrainerProfileDetails();
