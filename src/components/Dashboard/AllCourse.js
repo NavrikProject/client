@@ -25,14 +25,18 @@ const AllCourse = () => {
   }, [token]);
 
   const courseDeleteHandler = async (course) => {
+    
     const res = await axios.delete(
       `https://navriktrainingserverside.azurewebsites.net/api/courses/new/delete/${course.course_id}`,
       {
         headers: { authorization: "Bearer " + token },
       }
     );
-    if (res.data) {
-      return;
+    if (res.data.success) {
+      alert("Course deleted successfully");
+    }
+    if (res.data.error) {
+      alert("There was an error while deleting the course");
     }
   };
   const courseEditHandler = async (course) => {

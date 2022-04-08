@@ -43,6 +43,9 @@ const TrainerNavbar = ({ toggleMenuItems }) => {
       if (res.data.approved) {
         setActiveMenuBtn(true);
       }
+      if (res.data.disapproved) {
+        setActiveMenuBtn(false);
+      }
     };
     getTrainerProfileDetails();
   }, [user.id, user.accessToken]);

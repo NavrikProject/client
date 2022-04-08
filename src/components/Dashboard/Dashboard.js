@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import UsersTable from "./AllTrainersTable";
 import AllCourse from "./AllCourse";
 import Allusers from "./Allusers";
+
 const Dashboard = () => {
   const [showCourses, setShowCourse] = useState(false);
   const [showAllTrainers, setShowAllTrainers] = useState(true);

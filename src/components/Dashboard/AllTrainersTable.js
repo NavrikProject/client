@@ -9,6 +9,7 @@ const UsersTable = () => {
   const [allTrainers, setAllTrainers] = useState([]);
   const [approve, setApprove] = useState(true);
   const [loading, setLoading] = useState(false);
+  
   useEffect(() => {
     const getCourseByTitles = async () => {
       setLoading(true);

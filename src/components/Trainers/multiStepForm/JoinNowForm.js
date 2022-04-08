@@ -95,7 +95,11 @@ const JoinNowForm = () => {
       const res = await axios.get(
         `https://navriktrainingserverside.azurewebsites.net/api/courses/master?category=${category}`
       );
-      setMasterCourses(res.data);
+      if (res.data.master) {
+        setMasterCourses(res.data.master);
+      } else {
+        return;
+      }
     };
     getCourseByTitles();
   }, [category]);

@@ -17,9 +17,11 @@ const Allusers = () => {
           headers: { authorization: "Bearer " + token },
         }
       );
-      if (res.data) {
+      if (res.data.users) {
         setLoading(false);
-        setAllUsers(res.data);
+        setAllUsers(res.data.users);
+      } else {
+        setLoading(false);
       }
     };
     getAllTheUsers();

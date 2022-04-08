@@ -23,7 +23,7 @@ const TrainerCourse = () => {
         );
         setTrainerCourses(result.data);
       } catch (error) {
-        console.error(error);
+        return;
       }
     };
     getOnlyTrainerCourses();
@@ -42,11 +42,9 @@ const TrainerCourse = () => {
               <TrainerCourseTh>Starts&End Date</TrainerCourseTh>
               <TrainerCourseTh>Category</TrainerCourseTh>
               <TrainerCourseTh>Trainer Name</TrainerCourseTh>
-
               <TrainerCourseTh>Tags</TrainerCourseTh>
               <TrainerCourseTh>Spayee link</TrainerCourseTh>
             </TrainerCourseTr>
-
             {trainerCourses?.map((trainer) => (
               <TrainerCourseTr key={trainer.course_id}>
                 <TrainerCourseTd>{trainer.course_id}</TrainerCourseTd>
@@ -55,7 +53,7 @@ const TrainerCourse = () => {
                   {new Date(trainer.course_cr_date).toLocaleDateString()}
                 </TrainerCourseTd>
                 <TrainerCourseTd>
-                  {new Date(trainer.course_start_dt).toLocaleDateString()}{" "}
+                  {new Date(trainer.course_start_dt).toLocaleDateString()}
                   <br />
                   {new Date(trainer.course_end_dt).toLocaleDateString()}
                 </TrainerCourseTd>
