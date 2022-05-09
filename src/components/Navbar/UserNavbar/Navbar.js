@@ -10,16 +10,17 @@ import {
   Nav,
   NavItem,
   SearchBoxContainer,
-  SearchItemText,
   SearchForm,
   SearchBoxInput,
   FaSearchIcon,
 } from "./NavbarElements";
 import logo from "../../../images/practi-logo.png";
 import { useSelector } from "react-redux";
+import Submenu from "./Submenu";
 
 const Navbar = ({ toggleMenuItems }) => {
   const user = useSelector((state) => state.user.currentUser);
+
   return (
     <Nav>
       <LogoContainer>
@@ -41,9 +42,15 @@ const Navbar = ({ toggleMenuItems }) => {
         <MenuItem>
           {/* redirect to home page */}
           <NavItem>
-            <Link style={{ textDecoration: "none", color: "#062C30" }} to={`/`}>
-              Home
+            <Link
+              style={{ textDecoration: "none", color: "#062C30" }}
+              to={`/training-usp`}
+            >
+              Training USP
             </Link>
+          </NavItem>
+          <NavItem>
+            <Submenu />
           </NavItem>
           <NavItem>
             <Link
@@ -92,12 +99,12 @@ const Navbar = ({ toggleMenuItems }) => {
           <SearchBoxInput placeholder="Search....."></SearchBoxInput>
           <FaSearchIcon />
         </SearchForm>
-        <Link
+        {/* <Link
           style={{ textDecoration: "none", color: "#062C30" }}
           to={`/register`}
         >
           <SearchItemText>Register</SearchItemText>
-        </Link>
+        </Link> */}
       </SearchBoxContainer>
       <MenuBarContainer onClick={toggleMenuItems}>
         <FaBars />

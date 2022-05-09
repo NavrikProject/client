@@ -112,13 +112,13 @@ const Footer = () => {
               </ContactItem>
               <ContactItem>
                 <IconSpan>
-                  <i class="fas fa-phone"></i>
+                  <i className="fas fa-phone"></i>
                 </IconSpan>
                 (120) 3569310
               </ContactItem>
               <ContactItem>
                 <IconSpan>
-                  <i class="fas fa-envelope"></i>
+                  <i className="fas fa-envelope"></i>
                 </IconSpan>
                 contact@practilearn.com
               </ContactItem>

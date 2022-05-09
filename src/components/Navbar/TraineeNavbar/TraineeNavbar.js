@@ -28,6 +28,7 @@ import {
 import logo from "../../../images/practi-logo.png";
 import { logOut } from "../../../redux/userRedux.js";
 import axios from "axios";
+import Submenu from "../UserNavbar/Submenu.js";
 
 const TraineeNavbar = ({ toggleMenuItems }) => {
   let navigate = useNavigate();
@@ -45,12 +46,9 @@ const TraineeNavbar = ({ toggleMenuItems }) => {
   const token = user?.accessToken;
   useEffect(() => {
     const onImageGetHandler = async () => {
-      const res = await axios.get(
-        `https://navriktrainingserverside.azurewebsites.net/api/trainee/details/get/${user?.id}`,
-        {
-          headers: { authorization: "Bearer " + token },
-        }
-      );
+      const res = await axios.get(`/trainee/details/get/${user?.id}`, {
+        headers: { authorization: "Bearer " + token },
+      });
       setTraineeDetails(res.data);
     };
     onImageGetHandler();
@@ -71,10 +69,13 @@ const TraineeNavbar = ({ toggleMenuItems }) => {
           <NavItem>
             <Link
               style={{ textDecoration: "none", color: "#062C30" }}
-              to={`/${user?.type}`}
+              to={`/training-usp`}
             >
-              Home
+              Training USP
             </Link>
+          </NavItem>
+          <NavItem style={{ textDecoration: "none", color: "#062C30" }}>
+            <Submenu />
           </NavItem>
           <NavItem>
             <Link

@@ -54,13 +54,13 @@ const Reviews = () => {
                     <ReviewDiv>
                       <ReviewDescription>
                         <QuoteSpan>
-                          <i class="fas fa-quote-left"></i>
+                          <i className="fas fa-quote-left"></i>
                         </QuoteSpan>
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Fugit itaque odio, dolore ut delectus
                         exercitationem praesentium et quia esse labore!
                         <QuoteSpan>
-                          <i class="fas fa-quote-right"></i>
+                          <i className="fas fa-quote-right"></i>
                         </QuoteSpan>
                       </ReviewDescription>
                     </ReviewDiv>

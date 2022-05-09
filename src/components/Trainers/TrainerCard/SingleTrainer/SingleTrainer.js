@@ -119,7 +119,7 @@ const SingleTrainer = () => {
                             href={`${trainer.trainer_lnprofile}`}
                           >
                             Facebook
-                            <i class="fa-brands fa-facebook-square"></i>
+                            <i className="fa-brands fa-facebook-square"></i>
                           </TrainerSocialLinks>
                         </TrainerDivAbout>
                       </TrainerDivFlex>

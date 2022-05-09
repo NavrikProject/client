@@ -81,6 +81,8 @@ const YourCoursePage = React.lazy(() =>
 const ActivateAccountPage = React.lazy(() =>
   import("./pages/ActivateAccountPage")
 );
+const TrainerUspPage = React.lazy(() => import("./pages/TrainerUspPage.js"));
+const CorpTrainingPage = React.lazy(() => import("./pages/CorpTraining.js"));
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (
@@ -98,6 +100,8 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/training-usp" element={<TrainerUspPage />} />
+            <Route path="/training/corporate" element={<CorpTrainingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             {/* current it is commented out <Route path="/trainee/cart" element={<Cart />} /> */}

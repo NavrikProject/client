@@ -84,7 +84,6 @@ const HomeSection = () => {
   //   }
   // });
 
-  
   // login function handler
   const loginFormSubmitHandler = async (event) => {
     event.preventDefault();

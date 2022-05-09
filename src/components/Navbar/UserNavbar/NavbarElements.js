@@ -49,7 +49,7 @@ export const NavItem = styled.li`
   list-style-type: none;
   display: inline-block;
   margin: 0 20px;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 500;
   color: #111;
   cursor: pointer;
@@ -98,6 +98,7 @@ export const SearchBoxInput = styled.input`
   font-size: 17px;
   border: 2px solid #111;
   border-radius: 3px;
+  width: 130px;
 `;
 export const FaCartIcon = styled(FaShoppingCart)`
   font-size: 22px !important;
