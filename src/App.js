@@ -85,6 +85,7 @@ const TrainerUspPage = React.lazy(() => import("./pages/TrainerUspPage.js"));
 const CorpTrainingPage = React.lazy(() => import("./pages/CorpTraining.js"));
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
+  const hello = "hello";
   return (
     <>
       <ToastContainer />
